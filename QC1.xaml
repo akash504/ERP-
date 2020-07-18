@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="weldone.QC1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FFF">
+
+    <Grid>
+        <Grid >
+            <NavigationView x:Name="nvTopLevelNav" 
+                            
+                ItemInvoked="nvTopLevelNav_ItemInvoked"
+                Loaded="nvTopLevelNav_Loaded" IsBackEnabled="True" IsBackButtonVisible="Visible" BackRequested="NavView_BackRequested"
+                IsTabStop="False"
+                IsSettingsVisible="False" >
+                <NavigationView.MenuItems >
+                    <NavigationViewItem  Tag="Home1"   Icon="Home">
+                        <TextBlock Tag="Home1">Home</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Purchase Inward QC"  Icon="ImportAll" >
+                        <TextBlock Tag="Purchase Inward QC">Purchase Inward QC</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Dispatch QC"  Icon="Accept" >
+                        <TextBlock Tag="Dispatch QC">Dispatch QC</TextBlock>
+                    </NavigationViewItem>
+
+                </NavigationView.MenuItems>
+                <Frame x:Name="contentFrame"></Frame>
+            </NavigationView>
+
+
+        </Grid>
+    </Grid>
+    
+</Page>

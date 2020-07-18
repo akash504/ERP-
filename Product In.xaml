@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="weldone.Product_In"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loader">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        <ProgressRing x:Name="progress1" IsActive="true" Visibility="Visible" Width="40" Height="35" MinWidth="40" MinHeight="35"/>
+        <Grid x:Name="pin" Visibility="Collapsed">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="0.3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="0.7*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.0*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" HorizontalAlignment="Left">
+                    <TextBlock Text="Inventory | Product In" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1" Background="#F3F4F5" BorderBrush="#C8C7C7" BorderThickness="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="0.4*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid  Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.0*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.0*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Foreground="#000" Grid.Column="1" Text="S No" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="2" Text="Puchase ID" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="3" Text="Coil No" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="4" Text="Strip Size" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="5" Text="Supplier" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="6" Text="Quantity" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="7" Text="Date" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                        <TextBlock Foreground="#000" Grid.Column="8" Text="Time" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40"/>
+                    </Grid>
+                    <ListView x:Name="MyList" Grid.Row="1" BorderBrush="#C8C7C7" BorderThickness="1"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Width="200">
+                                        <TextBlock Text="{Binding sno}"   FontWeight="Light" FontSize="18"  Foreground="#000"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Width="400">
+                                        <TextBlock Text="{Binding purchaseid}" Grid.Column="1" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="2" Width="400">
+                                        <TextBlock Text="{Binding coilno}" Grid.Column="1" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Width="400">
+                                        <TextBlock Text="{Binding stripsize}" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="4" Width="400">
+                                        <TextBlock Text="{Binding supplier}" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="5" Width="400">
+                                        <TextBlock Text="{Binding quantity}" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="6" Width="400">
+                                        <TextBlock Text="{Binding date}" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    <Grid Grid.Column="7" Width="400">
+                                        <TextBlock Text="{Binding time}" FontWeight="Light" FontSize="18" Foreground="#000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+        <Frame x:Name="contentFrame"></Frame>
+    </Grid>
+</Page>

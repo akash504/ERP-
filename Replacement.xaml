@@ -1,0 +1,117 @@
+﻿<Page
+    x:Class="weldone.Replacement"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loader">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1.2*"/>
+
+                </Grid.RowDefinitions  >
+                <TextBlock Foreground="#0073DC"   FontWeight="Normal" Grid.Row="1" Text="Purchase Order No" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fOrder" TextChanged="autoOrder" QuerySubmitted="qOrder" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF" FontWeight="Normal"  Foreground="#FFF" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   FontWeight="Normal" Grid.Row="3" Text="Product Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fProduct" QuerySubmitted="qProduct" TextChanged="autoProduct" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   FontWeight="Normal"  Grid.Row="5" Text="QC's Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fQC" TextChanged="autoQC" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF" FontWeight="Normal"  Foreground="#FFF" Grid.Row="6" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="7" FontWeight="Normal"  Text="Supplier Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fSupplier"  BorderThickness="0"  VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="8" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="9" Text="Quantity Raised" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fRQuantity" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="10" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+            </Grid>
+            <Grid Grid.Column="3" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1.2*"/>
+
+
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="#0073DC"   Grid.Row="1" Text="Quantity Recieved" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fQRecieved" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="3" Text="Accepted" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal"/>
+                <AutoSuggestBox x:Name="fAccepted" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="5" Text="Replacement (Rejected)" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fRejected" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="6" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="7" Text="Date" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fDate" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Normal" Background="#FFF" Foreground="#FFF" Grid.Row="8" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#0073DC"   Grid.Row="9" Text="Time" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fTime" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF"  FontWeight="Normal"  Foreground="#FFF" Grid.Row="10" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="260" Height="36">
+
+                </AutoSuggestBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Button   HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Top" Background="Transparent" FontWeight="Normal" BorderBrush="#0073DC" BorderThickness="1.5" Content="Submit" Foreground="#0073DC" FontSize="20" Width="250" Height="40"/>
+        </Grid>
+    </Grid>
+</Page>

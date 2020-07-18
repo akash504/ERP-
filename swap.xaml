@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="weldone.swap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d"
+    Loaded="MainPage_Loaded"
+    >
+    <Grid Background="#fff">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.3*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions >
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Charting:Chart Grid.Row="1" Grid.Column="0" x:Name="PieChart" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Charting:PieSeries Margin="0" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True"/>
+        </Charting:Chart>
+        <AutoSuggestBox x:Name="auto" Grid.Column="0" Grid.Row="0" Width="220" Height="37" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="ButtonRefresh" Grid.Row="0" Grid.Column="1" Content="Fetch" HorizontalAlignment="Center"  Height="40" Width="200" VerticalAlignment="Center" Click="ButtonRefresh_Click"/>
+        <Charting:Chart Grid.Row="1" Grid.Column="1" x:Name="ColumnChart" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+            <Charting:ColumnSeries Title="Smartphone Companies" Margin="0" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True"/>
+        </Charting:Chart>
+        <Charting:Chart Grid.Row="2" Grid.Column="0" x:Name="LineChart" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Charting:LineSeries Title="Smartphone Companies" Margin="0" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True"/>
+        </Charting:Chart>
+        <Charting:Chart Grid.Row="2" Grid.Column="1" x:Name="BarChart" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+            <Charting:BarSeries Title="Smartphone Companies" Margin="0" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="True"/>
+        </Charting:Chart>
+    </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="weldone.Admin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Windows.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <muxc:NavigationView PaneDisplayMode="Top">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="Home" Icon="Home" />
+                <muxc:NavigationViewItem Content="Collections" 
+                               Icon="Keyboard" >
+                    
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewList >
+                    <muxc:NavigationViewItem Content="Home" Icon="Home" />
+                    <muxc:NavigationViewItem Content="Home" Icon="Home" />
+                    <muxc:NavigationViewItem Content="Home" Icon="Home" />
+                </muxc:NavigationViewList>
+            </muxc:NavigationView.MenuItems>
+        </muxc:NavigationView>
+    </Grid>
+</Page>

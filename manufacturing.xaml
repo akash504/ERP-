@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="weldone.manufacturing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FFF">
+
+    <Grid>
+
+        <Grid >
+            <NavigationView x:Name="nvTopLevelNav" 
+                            
+                ItemInvoked="nvTopLevelNav_ItemInvoked"
+                Loaded="nvTopLevelNav_Loaded" IsBackEnabled="True" IsBackButtonVisible="Visible" BackRequested="NavView_BackRequested"
+                IsTabStop="False"
+                IsSettingsVisible="False" >
+                <NavigationView.MenuItems >
+                    <NavigationViewItem  Tag="Home1"   Icon="Home">
+                        <TextBlock Tag="Home1">Home</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Route Card" x:Name="A" Icon="Priority"   >
+                        <TextBlock Tag="Route Card">Route Card</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Route Card Review"  Icon="Edit"   >
+                        <TextBlock Tag="Route Card Review">Route Card Review</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Production Entry" x:Name="B" Icon="Find" >
+                        <TextBlock Tag="Production Entry">Production Entry</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Semi Finished Goods" x:Name="C" Icon="Scan" >
+                        <TextBlock Tag="Semi Finished Goods">Semi Finished Goods</TextBlock>
+                    </NavigationViewItem>
+                    
+                        
+                </NavigationView.MenuItems>
+                <Frame x:Name="contentFrame"></Frame>
+            </NavigationView>
+
+
+        </Grid>
+
+    </Grid>
+</Page>

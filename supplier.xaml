@@ -1,0 +1,155 @@
+﻿<Page
+    x:Class="weldone.supplier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loader">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        <ProgressRing x:Name="progress1" IsActive="true" Visibility="Visible" Width="40" Height="40" MinWidth="40" MinHeight="40"/>
+        <Grid x:Name="sup" Visibility="Collapsed">
+
+            <Grid Height="520" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Popup x:Name="Nav_Pop" IsOpen="False" IsLightDismissEnabled="True"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="520" Width="400" LightDismissOverlayMode="On">
+                    <Grid x:Name="Row"  Background="#F3F4F5" Height="520" Width="400" BorderThickness="5" >
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1" >
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1"  HorizontalAlignment="Center"  Background="#F3F4F5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+
+                                    </Grid.RowDefinitions  >
+                                    <TextBlock Foreground="#000" Grid.Row="1" Text="Supplier Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"  FontWeight="Normal" />
+                                    <TextBox x:Name="fname" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Light" Width="250" Height="35"/>
+                                    <TextBlock Foreground="#000" Grid.Row="3" Text="Supplier Contact No" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal"  />
+                                    <TextBox x:Name="fcontact" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="4" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Light" Width="250" Height="35"/>
+                                    <TextBlock Foreground="#000" Grid.Row="5" Text="Supplier Mail ID" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal"  />
+                                    <TextBox x:Name="fmail" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="6" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" FontWeight="Light" Height="35"/>
+                                    <TextBlock Foreground="#000" Grid.Row="7" Text="Supplier Address" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                                    <TextBox x:Name="faddress" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="8" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" FontWeight="Light" Height="35"/>
+
+                                    <Button Grid.Row="10" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#2F5392" BorderThickness="0" Content="Submit" Foreground="#fff" FontSize="20" Width="250" Height="40" Click="Button_Click_2"/>
+
+                                </Grid>
+
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Popup>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="0.7*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" HorizontalAlignment="Left">
+                        <TextBlock Text="Masters | Supplier" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Grid>
+                    <Button Grid.Column="2"  HorizontalAlignment="Center" FontWeight="Normal" VerticalAlignment="Center" Background="#2F5392" BorderThickness="0" Content="Add" Foreground="#FFF" FontSize="20" Width="200" Height="40" Click="Button_Click_1"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Background="#F3F4F5" BorderBrush="#C8C7C7" BorderThickness="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Foreground="#000" Grid.Column="1" Text="S No" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <TextBlock Foreground="#000" Grid.Column="2" Text="Name" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <TextBlock Foreground="#000" Grid.Column="3" Text="Contact No" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <TextBlock Foreground="#000" Grid.Column="4" Text="Mail ID" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <TextBlock Foreground="#000" Grid.Column="5" Text="Address" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="15*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListView x:Name="MyList" Grid.Column="1" BorderBrush="#C8C7C7" BorderThickness="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="4*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" Width="100">
+                                            <TextBlock Text="{Binding sno}"    FontSize="20"  FontWeight="Light"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1" Width="200">
+                                            <TextBlock Text="{Binding cname}" Grid.Column="1" FontWeight="Light"  FontSize="20"  VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                                        </Grid>
+                                        <Grid Grid.Column="2" Width="300">
+                                            <TextBlock Text="{Binding cphone}" FontWeight="Light"  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                        <Grid Grid.Column="3" Width="400">
+                                            <TextBlock Text="{Binding cmail}" FontWeight="Light"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                        <Grid Grid.Column="4" Width="400">
+                                            <TextBlock Text="{Binding caddress}" FontWeight="Light"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Frame x:Name="contentFrame"></Frame>
+    </Grid>
+</Page>

@@ -1,0 +1,119 @@
+﻿<Page
+    x:Class="weldone.Basic_Tools"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loader">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        <ProgressRing x:Name="progress1" IsActive="true" Visibility="Visible" Width="40" Height="35" MinWidth="40" MinHeight="35"/>
+        <Grid x:Name="dis" Visibility="Collapsed">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Inventory | Dispatch QC" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" Background="#F3F4F5" BorderBrush="#C8C7C7" BorderThickness="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="1.2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Foreground="#000"   FontWeight="Normal" Grid.Row="1" Grid.Column="0" Text="Sales Order ID" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fSales" TextChanged="autoSales" QuerySubmitted="qSales" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF" FontWeight="Light"  Foreground="#FFF" Grid.Row="1" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   FontWeight="Normal" Grid.Row="2" Grid.Column="0" Text="Product Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fProduct" QuerySubmitted="qProduct" TextChanged="autoProduct" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="2" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   FontWeight="Normal"  Grid.Row="3" Grid.Column="0" Text="Status" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fStatus" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF" FontWeight="Light"  Foreground="#FFF" Grid.Row="3" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="4" Grid.Column="0" FontWeight="Normal"  Text="Expected" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fEQuantity" BorderThickness="0"  VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="4" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="5" Grid.Column="0" Text="Produced" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <AutoSuggestBox x:Name="fPQuantity" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="5" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+            </Grid>
+            <Grid Grid.Column="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="1.2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Foreground="#000"   Grid.Row="1" Grid.Column="0" Text="Vehicle No" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fVehicle" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="1" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="2" Grid.Column="0" Text="Driver Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal"/>
+                <AutoSuggestBox x:Name="fDriverName" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="2" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="3" Grid.Column="0" Text="Driver Contact No" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fDriverContact" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="3" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="4" Grid.Column="0" Text="Date" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fDate" BorderThickness="0" VerticalContentAlignment="Center" FontWeight="Light" Background="#FFF" Foreground="#FFF" Grid.Row="4" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+                <TextBlock Foreground="#000"   Grid.Row="5" Grid.Column="0" Text="Time" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                <AutoSuggestBox x:Name="fTime" BorderThickness="0" VerticalContentAlignment="Center" Background="#FFF"  FontWeight="Light"  Foreground="#FFF" Grid.Row="5" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="36">
+
+                </AutoSuggestBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Button Click="submit"  HorizontalAlignment="Right"  VerticalAlignment="Center" Background="#2F5392" FontWeight="Normal"  Content="Submit" Foreground="#FFF" FontSize="20" Width="250" Height="40"/>
+        </Grid>
+    </Grid>
+        <Frame x:Name="contentFrame"></Frame>
+    </Grid>
+</Page>

@@ -1,0 +1,228 @@
+﻿<Page
+    x:Class="weldone.BlankPage11"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loader">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        <ProgressRing x:Name="progress1" IsActive="true" Visibility="Visible" Width="40" Height="35" MinWidth="40" MinHeight="35"/>
+        <Grid x:Name="po" Visibility="Collapsed">
+            <Grid Height="580" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Popup x:Name="Nav_Pop2" IsOpen="False" IsLightDismissEnabled="True"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="580" Width="700">
+                    <Grid x:Name="Row"  Background="#F3F4F5" Height="580" Width="700" BorderThickness="5" HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Foreground="#000" Grid.Row="1" Grid.Column="0" Text="Sales Order ID" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                        <AutoSuggestBox x:Name="pSalesID" BorderThickness="1" BorderBrush="#C8C7C7" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="#fff"  Grid.Row="1" Grid.Column="1" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" Height="35" TextChanged="AutoSuggestBox_TextChanged4"/>
+                        <Button Grid.Row="3" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0075aa" BorderBrush="#fff" Content="Add" Foreground="#fff" FontSize="20" Width="220" Height="35" Click="Popup_Submit2"/>
+                        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0075aa" BorderBrush="#fff" Content="Finish" Foreground="#fff" FontSize="20" Width="220" Height="35" Click="Popup_Finish2"/>
+                        <ListView x:Name="MyList" Grid.Row="2" Grid.ColumnSpan="2" ItemClick="MyList_ItemClick2" Grid.Column="0" IsItemClickEnabled="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding SNo}" Width="200" HorizontalTextAlignment="Center" Foreground="#000" Grid.Column="0"  HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding salesID}" Width="400" HorizontalTextAlignment="Center" Foreground="#000" Grid.Column="1"  HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Popup>
+            </Grid>
+            <Grid Height="580" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Popup x:Name="Nav_Pop" IsOpen="False" IsLightDismissEnabled="True"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="580" Width="700">
+                    <Grid x:Name="Row2"  Background="#F3F4F5" Height="580" Width="700" BorderThickness="5" HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Foreground="#000" Grid.Row="0" Grid.Column="0" Text="Item Name" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                        <AutoSuggestBox x:Name="pNameT" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="#fff" BorderBrush="#fff" Grid.Row="1" Grid.Column="0" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="35" TextChanged="AutoSuggestBox_TextChanged2"/>
+                        <TextBlock Foreground="#000" Grid.Row="0" Grid.Column="1" Text="Quantity" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <AutoSuggestBox x:Name="pQuantityT" HorizontalContentAlignment="Center" Grid.Column="1" VerticalContentAlignment="Top"  Background="#fff" BorderBrush="#fff" Grid.Row="1" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="35" />
+                        <Button Grid.Row="3" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0075aa" BorderBrush="#fff" Content="Add" Foreground="#fff" FontSize="20" Width="220" Height="35" Click="Popup_Submit"/>
+                        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0075aa" BorderBrush="#fff" Content="Finish" Foreground="#fff" FontSize="20" Width="220" Height="35" Click="Popup_Finish"/>
+                        <ListView x:Name="MyList2" Grid.Row="2" Grid.ColumnSpan="2" ItemClick="MyList_ItemClick" Grid.Column="0" IsItemClickEnabled="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding SNo}" Grid.Column="0" Width="50" Foreground="#000" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding pName}" Grid.Column="1" Width="500" Foreground="#000"  HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding pQuantity}" Grid.Column="2" Width="220" Foreground="#000" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Popup>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <TextBlock Text="Purchase | Purchase Order" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" Background="#F3F4F5" BorderBrush="#C8C7C7" BorderThickness="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="1.3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Foreground="#000" Grid.Row="1" Grid.Column="0" Text="Purchase Order No" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" SelectionChanged="TextBlock_SelectionChanged" />
+                        <AutoSuggestBox x:Name="pOrderID" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#fff" BorderBrush="#fff" Grid.Row="1" Grid.Column="1" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="35" TextChanged="AutoSuggestBox_TextChanged3"/>
+                        <TextBlock Foreground="#000" Grid.Row="2" Grid.Column="0" Text="Supplier Name" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" SelectionChanged="TextBlock_SelectionChanged" />
+                        <AutoSuggestBox x:Name="pSupplier" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#fff" BorderBrush="#fff" Grid.Row="2" Grid.Column="1" FontSize="25" HorizontalAlignment="Center"  TextChanged="AutoSuggestBox_TextChanged" VerticalAlignment="Center" Width="220" Height="35" />
+                        <TextBlock Foreground="#000" Grid.Row="3" Grid.Column="0" Text="Date" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal" />
+                        <AutoSuggestBox BorderThickness="0" x:Name="DateT" Background="#fff" Foreground="#000" Grid.Row="3" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Light" Width="220" Height="35"/>
+                        <TextBlock Foreground="#000" Grid.Row="4" Grid.Column="0" Text="Time" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Normal"/>
+                        <AutoSuggestBox BorderThickness="0" x:Name="TimeT" Background="#fff" Foreground="#000" Grid.Row="4" Grid.Column="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Light" Width="220" Height="35"/>
+
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1"  Width="400" HorizontalAlignment="Left" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="#000" Grid.Column="0" Text="Sales Order ID" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <Button Grid.Column="1"   VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent" Foreground="#000"  Click="Button_Click_1"  >
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock  Grid.Column="0" Width="25" FontFamily="Segoe MDL2 Assets" Text="&#xE710;" HorizontalTextAlignment="Center" FontSize="18" HorizontalAlignment="Center"   VerticalAlignment="Center"  />
+
+                                    <TextBlock Grid.Column="2" Width="50" Text="Add" FontSize="18"  HorizontalTextAlignment="Center"  FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                </Grid>
+
+                            </Button>
+                        </Grid>
+                        <ListView x:Name="endList2" Grid.Row="2" IsItemClickEnabled="True" Width="400" HorizontalAlignment="Left" BorderBrush="#C8C7C7" BorderThickness="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding SNo}" Grid.Column="0" Width="50" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding salesID}" Grid.Column="1" Width="500"  HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Grid Grid.Row="3"  Width="400" HorizontalAlignment="Left" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="#000" Grid.Column="0" Text="Item List" FontSize="20" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <Button Grid.Column="1"   VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent" Foreground="#000"  Click="Button_Click" >
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock  Grid.Column="0" Width="25" FontFamily="Segoe MDL2 Assets" Text="&#xE710;" HorizontalTextAlignment="Center" FontSize="18" HorizontalAlignment="Center"   VerticalAlignment="Center"  />
+
+                                    <TextBlock Grid.Column="2" Width="50" Text="Add" FontSize="18"  HorizontalTextAlignment="Center"  FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                </Grid>
+
+                            </Button>
+                        </Grid>
+                        <ListView x:Name="endList" Grid.Row="4" IsItemClickEnabled="True" Width="400" HorizontalAlignment="Left" BorderBrush="#C8C7C7" BorderThickness="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding SNo}" Grid.Column="0"  Width="50" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding pName}" Grid.Column="1" Width="100"  HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding pQuantity}" Grid.Column="2" Width="100" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+
+                    <Button   HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Center" Background="#2F5392" BorderThickness="0" FontWeight="Normal" Content="Submit" Foreground="#fff" FontSize="20" Width="220" Height="40" Click="Button_Click_2"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Frame x:Name="contentFrame"></Frame>
+    </Grid>
+</Page>

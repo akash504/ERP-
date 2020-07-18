@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="weldone.BlankPage8"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FFF"
+    >
+
+    <Grid>
+        <Grid >
+
+            <NavigationView x:Name="nvTopLevelNav"  
+                ItemInvoked="nvTopLevelNav_ItemInvoked"
+                IsTabStop="False"
+                Loaded="nvTopLevelNav_Loaded" IsBackEnabled="True" IsBackButtonVisible="Visible" BackRequested="NavView_BackRequested"
+                IsSettingsVisible="False" >
+                <NavigationView.MenuItems >
+                    <NavigationViewItem  Tag="Home1"   Icon="Home">
+                        <TextBlock Tag="Home1">Home</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Employee Profile"   Icon="Contact">
+                        <TextBlock Tag="Employee Profile" SelectionChanged="TextBlock_SelectionChanged">Employee Profile</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="Attendance"   Icon="Calendar">
+                        <TextBlock Tag="Attendance">Attendance</TextBlock>
+                    </NavigationViewItem>
+                    <NavigationViewItem Tag="salary" Icon="Calculator">
+                        <TextBlock Tag="salary">Salary</TextBlock>
+                    </NavigationViewItem>
+
+                </NavigationView.MenuItems>
+                <Frame x:Name="contentFrame"></Frame>
+            </NavigationView>
+
+
+        </Grid>
+    </Grid>
+</Page>

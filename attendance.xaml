@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="weldone.BlankPage7"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weldone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loader"
+    >
+    <Grid>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/bk1.png"/>
+        </Grid.Background>
+        
+        <ProgressRing x:Name="progress1" IsActive="true" Visibility="Visible" Width="40" Height="35" MinWidth="40" MinHeight="35"/>
+        
+        <Grid x:Name="grid1" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="0.3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="HR | Attendance" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2" Background="#F3F4F5" BorderBrush="#C8C7C7" BorderThickness="1">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <TextBlock Foreground="#000" Grid.Row="1" Grid.Column="1" Text="Employee Name" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="35"/>
+                <AutoSuggestBox x:Name="eNameT" FontWeight="Light" BorderBrush="#C8C7C7" BorderThickness="1" Grid.Row="1" Grid.Column="2" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Height="35"  TextChanged="AutoSuggestBox_TextChanged"/>
+                <TextBlock Foreground="#000" Grid.Row="2" Grid.Column="1" Text="Entry/Exit" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35"/>
+                <ComboBox x:Name="entryT" FontWeight="Light" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="2" Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="35" SelectionChanged="entryT_SelectionChanged"/>
+                <TextBlock Foreground="#000" Grid.Row="3" Grid.Column="1" Text="Date" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="35"/>
+                <TextBox x:Name="DateT" FontWeight="Light" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="3" Grid.Column="2" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Height="35" TextChanged="DateT_TextChanged"/>
+                <TextBlock Foreground="#000" Grid.Row="4" Grid.Column="1" Text="Time" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35"/>
+                <TextBox x:Name="TimeT" FontWeight="Light" BorderBrush="#C8C7C7" BorderThickness="1" Background="#fff" Foreground="#000" Grid.Row="4" Grid.Column="2" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Height="35" TextChanged="TimeT_TextChanged" />
+                
+            </Grid>
+            <Button x:Name="e" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#2F5392" Content="Submit" Foreground="#FFF" FontSize="20" Width="250" Height="40" Click="e_Click" />
+
+        </Grid>
+    </Grid>
+        <Frame x:Name="contentFrame"></Frame>
+    </Grid>
+</Page>
+    
